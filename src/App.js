@@ -18,10 +18,10 @@ function App() {
     <>
       <div className='container'>
         <ToDoCounter />
-        <ToDoSearch />
         <ToDoList>
+        <ToDoSearch />
           {ToDos.map(todo => (
-            <ToDoItem key={todo.text} text={todo.text} />
+            <ToDoItem key={todo.text} text={todo.text} completed={todo.completed}/>
           ))}
         </ToDoList>
         <ToDoButton />
@@ -31,4 +31,4 @@ function App() {
   );
 }
 
-export default App;
+export default App; 

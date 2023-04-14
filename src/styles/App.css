@@ -1,3 +1,8 @@
+:root{
+  --backGround :#ecf0f3 ;
+  --darkShadow:#a7aaaf;
+  --lightShadow:#fff;
+}
 .App {
   text-align: center;
 }
@@ -66,38 +71,70 @@ body{
   padding: 5px;
   display: grid;
   justify-content: center;
+  margin-bottom: 4%;
 }
 .search{
   width: 250px;
   border-radius: 8px;
+  cursor: pointer;
+  background: #ffffff;
   padding: 2%;
   font-size: 18px;
+  border: #e8eaea 4px solid;
+  outline: none;
+  background: transparent;
+  transition: all 1s ease;
 }
+.search::placeholder{
+  text-align: center;
+}
+.search:focus{
+  outline: none;
+  border: #f0f5f8 4px solid;
+  box-shadow: inset 1px 5px 8px var(--darkShadow), inset -27.93px -27.93px 20px var(--lightShadow);
+}
+
 /* list */
 .contList{
-  width: 700px;
-  height: 350px;
+  width: 800px;
+  height: 360px;
   display: grid;
   justify-self: center;
   justify-content: center;
+  border: 2px black solid;
+  border-top: none;
+  border-radius: 0 0 20px 20px;
+  background-color: #ecf0f3;
 }
 /* item */
 
 .contItem{
   display: flex;
   align-items: center;
+  cursor: pointer;
   width: 400px;
-  padding: 1%;
+  padding: 2%;
   justify-content: space-between;
   margin-bottom: 2%;
+  transition: all 1s ease;
 }
-
+.contItem:hover{
+  transform: scale(1.1);
+  box-shadow: 2px 2px 6px #a7aaaf, -8px -8px 10px  #fff;
+  border-radius: 10px;
+  transition: transform 2s ease-out ;
+}
 .contItem input[type="checkbox"]{
   cursor: pointer;
   transform: scale(1.5);
   accent-color: rgb(40, 141, 40);
 }
-
+.toDoCheck{
+  text-decoration: line-through;
+}
+.toDoUndo{
+  text-decoration: none;
+}
 .eraseItem{
   font-weight: bolder;
   font-size: 18px;
@@ -111,14 +148,16 @@ body{
   border-radius: 50px;
   width: 60px;
   height: 60px;
-  background: transparent;
+  background: #61dafb;
+  color: whitesmoke;
   font-size: 40px;
   font-weight: 400;
-  border: solid black 3px;
+  border: solid #61dafb 3px;
   position: relative;
   left: 700px;
-  bottom: 20px;
-  
+  bottom: 80px;
+  box-shadow: 2px 2px 6px #a7aaaf, -8px -8px 10px  #fff;
+  transition: all 1s;
 }
 .addButton:hover{
   transform: rotate(180deg);
