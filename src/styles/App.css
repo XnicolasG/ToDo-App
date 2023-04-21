@@ -130,10 +130,10 @@ body{
   accent-color: rgb(40, 141, 40);
 }
 .toDoCheck{
-  text-decoration: line-through;
+  text-decoration: none;
 }
 .toDoUndo{
-  text-decoration: none;
+  text-decoration: line-through;
 }
 .eraseItem{
   font-weight: bolder;
