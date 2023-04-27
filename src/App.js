@@ -1,9 +1,8 @@
 import '../src/styles/App.css';
-
 import './styles/App.css'
 import { useEffect, useState } from 'react';
 import { TodoProvider } from './context/todoContext';
-import TodoContainer from './container'
+import {TodoContainer} from './container'
 
 // const defaultToDos = [
 //   { text: 'Estudiar', completed: false },
@@ -14,11 +13,9 @@ import TodoContainer from './container'
 
 
 function App() {
-  
-
   return (
     <TodoProvider>
-      <TodoContainer/>
+      < TodoContainer/>
     </TodoProvider>
 
   );

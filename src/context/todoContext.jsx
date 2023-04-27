@@ -3,6 +3,7 @@ import { useLocalStorage } from './useLocalStorage'
 
 /* createContext() crear 'un estado' que contiene dos elmentos. 
 uno en el que cargamos informacion y otro en el que la entregamos*/ 
+
 const todoContext /*{provider , consumer}*/ = createContext(); 
 
 function TodoProvider(props) {

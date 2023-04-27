@@ -8,12 +8,12 @@ import { todoContext } from './context/todoContext';
 
 const TodoContainer = () => {
     return (
-        
+        <>
             <div className='container'>
-                
-                <ToDoCounter /> {/* conteo de ToDo's */}
-                
-                <todoContext.Consumer> {/*llamado de valores guardados en context*/} 
+
+                <ToDoCounter /> 
+
+                <todoContext.Consumer> 
                     {({
                         error,
                         loading,
@@ -41,7 +41,8 @@ const TodoContainer = () => {
                 </todoContext.Consumer>
                 <ToDoButton />
             </div>
+        </>
     )
 }
 
-export default TodoContainer 
+export {TodoContainer} 
