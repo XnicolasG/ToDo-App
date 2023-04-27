@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { ToDoCounter } from './components/ToDoCounter';
 import ToDoButton from './components/ToDoButton';
 import ToDoSearch from './components/ToDoSearch';
@@ -7,20 +7,19 @@ import ToDoItem from './components/ToDoItem';
 import { todoContext } from './context/todoContext';
 
 const TodoContainer = () => {
+    const {
+        error,
+        loading,
+        searchedToDo,
+        completeToDo,
+        deleteToDo
+    } = useContext(todoContext);
+
     return (
         <>
             <div className='container'>
 
-                <ToDoCounter /> 
-
-                <todoContext.Consumer> 
-                    {({
-                        error,
-                        loading,
-                        searchedToDo,
-                        completeToDo,
-                        deleteToDo
-                    }) => (
+                <ToDoCounter />
                         <ToDoList>
                             <ToDoSearch />
                             {error && <p>Se genero un error</p>}
@@ -37,12 +36,10 @@ const TodoContainer = () => {
                                 />
                             ))}
                         </ToDoList>
-                    )}
-                </todoContext.Consumer>
                 <ToDoButton />
             </div>
         </>
     )
 }
 
-export {TodoContainer} 
+export { TodoContainer } 
