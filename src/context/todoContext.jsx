@@ -2,14 +2,14 @@ import React, { createContext, useState } from 'react'
 import { useLocalStorage } from './useLocalStorage'
 
 /* createContext() crear 'un estado' que contiene dos elmentos. 
-uno en el que cargamos informacion y otro en el que la entregamos*/ 
+uno en el que cargamos informacion y otro en el que la entregamos*/
 
-const todoContext /*{provider , consumer}*/ = createContext(); 
+const todoContext /*{provider , consumer}*/ = createContext();
 
 function TodoProvider(props) {
     const { item, saveItem, loading, error } = useLocalStorage('TODOS_V1', []);
 
-
+    const [openModal, setOpenModal] = useState(false);
     const [search, setSearch] = useState('');
 
     // al utilizar ! se niega (false), al utilizar !! se niega la negación (true)
@@ -74,10 +74,12 @@ function TodoProvider(props) {
             totalToDOs,
             searchedToDo,
             completeToDo,
-            deleteToDo
+            deleteToDo,
+            openModal,
+            setOpenModal
         }}>
             {props.children}
         </todoContext.Provider>
     );
 }
-export {todoContext, TodoProvider};
+export { todoContext, TodoProvider };
