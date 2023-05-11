@@ -8,7 +8,6 @@ export default function ToDoButton() {
   } = useContext(todoContext)
   
   const ClickModal = () => {
-    
     setOpenModal(true)
   }
   return (

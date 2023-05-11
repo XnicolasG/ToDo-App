@@ -1,6 +1,5 @@
 import '../src/styles/App.css';
 import './styles/App.css'
-import { useEffect, useState } from 'react';
 import { TodoProvider } from './context/todoContext';
 import {TodoContainer} from './container'
 

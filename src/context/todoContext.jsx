@@ -35,6 +35,15 @@ function TodoProvider(props) {
     }
 
 
+    const addToDo = (text)=>{
+        const newToDo = [...item]
+        newToDo.push({
+            completed: false,
+            text,
+        })
+        saveItem(newToDo);
+    }
+
 
     // Marcar como completado un item
     const completeToDo = (text) => {
@@ -76,7 +85,8 @@ function TodoProvider(props) {
             completeToDo,
             deleteToDo,
             openModal,
-            setOpenModal
+            setOpenModal,
+            addToDo
         }}>
             {props.children}
         </todoContext.Provider>

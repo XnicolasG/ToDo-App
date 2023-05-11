@@ -6,6 +6,7 @@ import ToDoList from './components/ToDoList';
 import ToDoItem from './components/ToDoItem';
 import { todoContext } from './context/todoContext';
 import { Modal } from './components/Modal';
+import { ToDoForm } from './components/ToDoForm';
 
 
 const TodoContainer = () => {
@@ -41,7 +42,7 @@ const TodoContainer = () => {
                 </ToDoList>
                 {openModal && (
                 <Modal>
-                    <p>teleport</p>
+                    <ToDoForm />
                 </Modal>
                 )}        
                 <ToDoButton />
