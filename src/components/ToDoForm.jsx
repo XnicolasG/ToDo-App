@@ -9,6 +9,7 @@ export const ToDoForm = () => {
     } = useContext(todoContext)
 
     const [newTodoVal, setNewTodoVal] = useState('');
+    const [warning, setWarning] = useState('disable')
 
     const onChange = (e) => {
         setNewTodoVal(e.target.value);
@@ -20,10 +21,12 @@ export const ToDoForm = () => {
 
     const onSubmit = (e) => {
         e.preventDefault();
-        if (newTodoVal === '') {
+        if (newTodoVal === '' ) {
+            setWarning('active')
             return
         } else {
             addToDo(newTodoVal) // enviado estado a funcion addTodo
+            setWarning('disable')
         }
         setOpenModal(false)
     }
@@ -37,7 +40,7 @@ export const ToDoForm = () => {
                     value={newTodoVal}
                     onChange={onChange}
                     placeholder="ej: hacer mercado" />
-                <p className='disable'>
+                <p className={warning}>
                     Escribe alguna tarea para poder agregar
                 </p>
 
