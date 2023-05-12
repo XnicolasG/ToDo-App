@@ -53,6 +53,7 @@ body{
   background-image: url('https://rare-gallery.com/mocahbig/50534-Artistic-Landscape-4k-Ultra-HD-Wallpaper.jpg');
   background-size: cover;
   background-position: center;
+  height: 100vh;
 }
 
 .container{
