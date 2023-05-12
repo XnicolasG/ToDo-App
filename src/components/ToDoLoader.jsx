@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ToDoLoader = () => {
+export default function ToDoLoader () {
     return (
         <>
             <section className="loader-container">
@@ -13,4 +13,4 @@ const ToDoLoader = () => {
     )
 }
 
-export default ToDoLoader
+
