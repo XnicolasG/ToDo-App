@@ -21,7 +21,7 @@ function ToDoCounter() {
         <>
         <div className='counter'>
             <main className="mainHeader">
-        <h1 className="coounterTitler">To Do List</h1>
+        <h1 className="coounterTitler">To Do </h1>
             <p className="count">Has completado {completedToDos} de {totalToDOs}</p>
             
             </main>

@@ -7,6 +7,7 @@ import ToDoItem from './components/ToDoItem';
 import { todoContext } from './context/todoContext';
 import { Modal } from './components/Modal';
 import { ToDoForm } from './components/ToDoForm';
+import ToDoLoader from './components/ToDoLoader';
 
 
 const TodoContainer = () => {
@@ -27,7 +28,12 @@ const TodoContainer = () => {
                 <ToDoList>
                     <ToDoSearch />
                     {error && <p>Se genero un error</p>}
-                    {loading && <p>Cargando...</p>}
+                    {loading && 
+                        Array.from({ length: 4 }).map((index) => (
+                            <ToDoLoader key={index} />
+                          ))
+                        }
+                    
                     {(!loading && !searchedToDo) && <p>crea tu primer To Do</p>}
 
                     {searchedToDo.map(todo => (

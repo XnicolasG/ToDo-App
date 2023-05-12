@@ -79,6 +79,10 @@ body{
   color: white;
   background-image: url('https://preview.redd.it/animated-wallpaper-1920-1080-v0-mthr3x0q3m091.png?auto=webp&s=9c853c670b3538bcfc9a54565abd25623bc50052') ;
 }
+.count{
+  font-size: 18px;
+  font-weight: 600;
+}
 .aside{
   display: grid; 
   align-items: start;
@@ -128,12 +132,13 @@ body{
   margin-bottom: 4%;
 }
 .search{
-  width: 250px;
+  width: 300px;
+  min-height: 30px;
   border-radius: 8px;
   cursor: pointer;
   background: #ffffff;
   padding: 2%;
-  font-size: 18px;
+  font-size: 20px;
   border: #e8eaea 4px solid;
   outline: none;
   background: transparent;
@@ -169,7 +174,10 @@ body{
   cursor: pointer;
   gap: 4%;
   width: 400px;
+  min-height: 65px;
   padding: 2%;
+  font-size: 1.2rem;
+  font-weight: 500;
   justify-content: space-between;
   margin-bottom: 2%;
   transition: all 1s ease;
@@ -198,6 +206,46 @@ body{
 }
 .eraseItem:hover{
   color: tomato;
+}
+
+/* ----LOADER--- */
+.loader-container{
+  max-width: 400px;
+  padding: 2%;
+  background: var(--backGround);
+}
+.loader{
+  background: var(--backGround);
+  background: linear-gradient(to right, var(--backGround) 8%, #dddddd 18%, var(--backGround) 42%);
+  display: flex;
+  align-items: center;
+  gap: 4%;
+  min-height: 60px;
+  padding: 2%;
+  animation-name: loaderAnimation;
+  animation-duration: 3s;
+  animation-fill-mode: forwards;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
+}
+@keyframes loaderAnimation {
+  0%{
+    background-position: -400px
+  }
+  100%{
+    background-position: 400px
+  }
+}
+.circle{
+  height: 35px;
+  width: 35px;
+  border-radius: 20px;
+  background: #d7e2e6;
+}
+.rectangle{
+  height: 25px;
+  width: 400px;
+  background: #d7e2e6;
 }
 /* button */
 .addButton{
@@ -290,7 +338,7 @@ body{
   height: 30%;
   background: transparent;
   border-radius: 4px;
-  font-size: 1.1rem;
+  font-size: 1.35rem;
   font-weight: 700;
   border: none;
   cursor: pointer;
