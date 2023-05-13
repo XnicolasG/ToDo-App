@@ -8,7 +8,7 @@ import { todoContext } from './context/todoContext';
 import { Modal } from './components/Modal';
 import { ToDoForm } from './components/ToDoForm';
 import ToDoLoader from './components/ToDoLoader';
-// import ToDoEmpty from './components/ToDoEmpty';
+import ToDoEmpty from './components/ToDoEmpty';
 
 
 const TodoContainer = () => {
@@ -18,7 +18,7 @@ const TodoContainer = () => {
         searchedToDo,
         completeToDo,
         deleteToDo,
-        // totalToDOs,
+        totalToDOs,
         openModal
     } = useContext(todoContext);
 
@@ -35,7 +35,7 @@ const TodoContainer = () => {
                             <ToDoLoader key={index} />
                           ))
                         }
-
+                    {(!loading && totalToDOs === 0)&& <ToDoEmpty />}
                     {searchedToDo.map(todo => (
                         <ToDoItem
                             key={todo.text}
