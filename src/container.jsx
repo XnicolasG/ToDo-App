@@ -36,7 +36,7 @@ const TodoContainer = () => {
                           ))
                         }
                     {(!loading && totalToDOs === 0)&& <ToDoEmpty />}
-                    {searchedToDo.map(todo => (
+                    {searchedToDo.map(todo => ( //iterar en cada elemento que este en searchedToDo y renderizarlos en forma de componente ToDoItem
                         <ToDoItem
                             key={todo.text}
                             text={todo.text}
