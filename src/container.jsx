@@ -9,6 +9,7 @@ import { Modal } from './components/Modal';
 import { ToDoForm } from './components/ToDoForm';
 import ToDoLoader from './components/ToDoLoader';
 import ToDoEmpty from './components/ToDoEmpty';
+import ToDoHeader from './components/ToDoHeader';
 
 
 const TodoContainer = () => {
@@ -19,23 +20,33 @@ const TodoContainer = () => {
         completeToDo,
         deleteToDo,
         totalToDOs,
-        openModal
+        openModal,
+        completedToDos,
+        search,
+        setSearch
     } = useContext(todoContext);
 
     return (
         <>
             <div className='container'>
-
-                <ToDoCounter />
+                <ToDoHeader>
+                    <ToDoCounter
+                        totalToDOs={totalToDOs}
+                        completedToDos={completedToDos}
+                    />
+                </ToDoHeader>
                 <ToDoList>
-                    <ToDoSearch />
+                    <ToDoSearch
+                        search={search}
+                        setSearch={setSearch}
+                    />
                     {error && <p>Se genero un error</p>}
-                    {loading && 
+                    {loading &&
                         Array.from({ length: 4 }).map((index) => (
                             <ToDoLoader key={index} />
-                          ))
-                        }
-                    {(!loading && totalToDOs === 0)&& <ToDoEmpty />}
+                        ))
+                    }
+                    {(!loading && totalToDOs === 0) && <ToDoEmpty />}
                     {searchedToDo.map(todo => ( //iterar en cada elemento que este en searchedToDo y renderizarlos en forma de componente ToDoItem
                         <ToDoItem
                             key={todo.text}
@@ -47,10 +58,10 @@ const TodoContainer = () => {
                     ))}
                 </ToDoList>
                 {openModal && (
-                <Modal>
-                    <ToDoForm />
-                </Modal>
-                )}        
+                    <Modal>
+                        <ToDoForm />
+                    </Modal>
+                )}
                 <ToDoButton />
             </div>
         </>

@@ -1,12 +1,8 @@
-import React, { useContext } from "react";
+import React from "react";
 import '../styles/App.css'
-import { todoContext } from "../context/todoContext";
 
-function ToDoCounter() {
-    const {
-        completedToDos,
-        totalToDOs
-    } = useContext(todoContext)
+function ToDoCounter({completedToDos,totalToDOs}) {
+    
 
 
     const date = new Date();

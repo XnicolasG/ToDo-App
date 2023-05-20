@@ -1,11 +1,11 @@
 import React from 'react'
 import '../styles/App.css'
 
-function ToDoList(props) {
+function ToDoList({children}) {
   return (
     <section className='contList'>
       <ul>
-        {props.children}
+        {children}
       </ul>
     </section>
   )
