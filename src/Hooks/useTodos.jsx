@@ -1,12 +1,12 @@
-import React, { createContext, useState } from 'react'
+import {useState } from 'react'
 import { useLocalStorage } from './useLocalStorage'
 
 /* createContext() crear 'un estado' que contiene dos elmentos. 
 uno en el que cargamos informacion y otro en el que la entregamos*/
 
-const todoContext /*{provider , consumer}*/ = createContext();
+// const todoContext /*{provider , consumer}*/ = createContext();
 
-function TodoProvider(props) {
+function useTodos(props) {
     const { item, saveItem, loading, error } = useLocalStorage('TODOS_V1', []);
 
     const [openModal, setOpenModal] = useState(false);
@@ -73,8 +73,7 @@ function TodoProvider(props) {
         newToDo.splice(toDoIndex, 1)
         saveItem(newToDo);
     }
-    return (
-        <todoContext.Provider value={{
+    return ({
             loading,
             error,
             search,
@@ -87,9 +86,6 @@ function TodoProvider(props) {
             openModal,
             setOpenModal,
             addToDo
-        }}>
-            {props.children}
-        </todoContext.Provider>
-    );
+        })
 }
-export { todoContext, TodoProvider };
+export { useTodos };

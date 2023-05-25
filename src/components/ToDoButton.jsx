@@ -1,11 +1,7 @@
-import React, { useContext } from 'react'
+import React from 'react'
 import '../styles/App.css'
-import { todoContext } from '../context/todoContext';
 
-export default function ToDoButton() {
-  const {
-    setOpenModal
-  } = useContext(todoContext)
+export default function ToDoButton({setOpenModal}) {
   
   const ClickModal = () => {
     setOpenModal(true)

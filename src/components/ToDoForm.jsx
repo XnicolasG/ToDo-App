@@ -1,12 +1,8 @@
-import React, { useContext, useState } from 'react'
-import { todoContext } from '../context/todoContext'
+import React, { useState } from 'react'
 
-export const ToDoForm = () => {
+export const ToDoForm = ({addToDo,setOpenModal}) => {
 
-    const {
-        addToDo,
-        setOpenModal
-    } = useContext(todoContext)
+    
 
     const [newTodoVal, setNewTodoVal] = useState('');
     const [warning, setWarning] = useState('disable')
